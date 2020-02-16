@@ -50,6 +50,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0626924923F920650044D4DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		0654707723F85CB8001DE205 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +78,7 @@
 		0654708223F85CB8001DE205 /* memo */ = {
 			isa = PBXGroup;
 			children = (
+				0626924923F920650044D4DC /* Model */,
 				0654708323F85CB8001DE205 /* AppDelegate.swift */,
 				0654708523F85CB8001DE205 /* SceneDelegate.swift */,
 				0654709723F85D40001DE205 /* MainRow.swift */,
@@ -100,7 +108,6 @@
 				D3CC96BE8BCD67150FAA265F /* Pods-memo.debug.xcconfig */,
 				72C34E9005E31B2D0FC7A3CF /* Pods-memo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

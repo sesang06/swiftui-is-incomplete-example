@@ -7,28 +7,59 @@
 //
 
 import SwiftUI
+import Combine
+
+class MessageViewModel: ObservableObject {
 
 
+  @Published var messageText = ""
+
+
+  func changeMessage() {
+
+  }
+
+  func send() {
+
+    print(self.messageText)
+  }
+
+
+}
 
 struct MessageInputView: View {
+
+  @State private var text: String = ""
+  @State private var value: CGFloat = 0
+
+
+  @ObservedObject var viewModel = MessageViewModel()
+
   var body: some View {
 
     HStack(alignment: .center) {
       Spacer()
         .frame(width: 20)
 
-      Text("키보드와 텍스트가 같은 시선상에 있다.")
+
+      TextField("HELLo", text: $viewModel.messageText)
         .font(Font.system(size: 16))
         .lineSpacing(24)
         .foregroundColor(Color.style.mainBlack)
 
       Spacer()
-      Image("create")
+
+      Button(action: {
+        self.viewModel.send()
+      }) {
+        Image("create")
         .frame(width: 40, height: 40)
         .background(Color.style.mainBlue)
         .cornerRadius(18)
         .padding(8)
 
+
+      }
 
 
     }
@@ -36,7 +67,36 @@ struct MessageInputView: View {
     .background(Color.white)
     .cornerRadius(20)
     .shadow(color: Color.black.opacity(0.16), radius: 4, x: 1, y: 3)
+    .offset(y: -self.value)
+    .animation(.spring())
+    .onAppear {
 
+      NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+
+
+        let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+
+        let height = value.height
+
+
+        self.value = height
+
+      }
+
+
+      NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (noti) in
+
+
+        let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+
+        let height = value.height
+
+
+        self.value = height
+
+      }
+
+    }
 
 
     

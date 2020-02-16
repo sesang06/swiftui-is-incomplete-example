@@ -58,18 +58,42 @@ struct MainRow: View {
   }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-  static var previews: some View {
-
+struct MainView: View {
+  var body: some View {
     NavigationView {
 
-      ScrollView {
+      ZStack {
+        ScrollView {
 
-        MainRow()
+               MainRow()
 
-        MainRow()
-          MainRow()
+               MainRow()
+                 MainRow()
+             }
+
+        NavigationLink(destination: MessageView()) {
+          Image("create_white")
+                     .foregroundColor(Color.white)
+                     .frame(width: 56, height: 56)
+                     .background(Color.style.mainBlue)
+                   .cornerRadius(40)
+                   .shadow(color: Color.black.opacity(0.16), radius: 4, x: 1, y: 3)
+        }
+//        Button(action: {
+//
+//        }) {
+//
+//
+//          Image("create_white")
+//            .foregroundColor(Color.white)
+//            .frame(width: 56, height: 56)
+//            .background(Color.style.mainBlue)
+//          .cornerRadius(40)
+//          .shadow(color: Color.black.opacity(0.16), radius: 4, x: 1, y: 3)
+//
+//        }
       }
+
       .navigationBarTitle("메인 화면", displayMode: .inline)
 
       .background(NavigationConfigurator { nc in
@@ -80,5 +104,12 @@ struct SwiftUIView_Previews: PreviewProvider {
                .foregroundColor: UIColor.white]
       })
     }
+  }
+}
+
+struct SwiftUIView_Previews: PreviewProvider {
+  static var previews: some View {
+MainView()
+
   }
 }
