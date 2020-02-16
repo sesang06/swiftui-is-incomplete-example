@@ -79,19 +79,6 @@ struct MainView: View {
                    .cornerRadius(40)
                    .shadow(color: Color.black.opacity(0.16), radius: 4, x: 1, y: 3)
         }
-//        Button(action: {
-//
-//        }) {
-//
-//
-//          Image("create_white")
-//            .foregroundColor(Color.white)
-//            .frame(width: 56, height: 56)
-//            .background(Color.style.mainBlue)
-//          .cornerRadius(40)
-//          .shadow(color: Color.black.opacity(0.16), radius: 4, x: 1, y: 3)
-//
-//        }
       }
 
       .navigationBarTitle("메인 화면", displayMode: .inline)

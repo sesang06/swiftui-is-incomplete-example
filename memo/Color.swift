@@ -8,6 +8,7 @@
 
 
 import SwiftUI
+import UIKit
 
 
 extension Color {
@@ -45,3 +46,21 @@ extension Color {
 
 }
 
+
+extension UIColor {
+
+  // MARK: System
+
+//  static let style = Style()
+
+
+  static func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat = 255) -> UIColor {
+    return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a / 255)
+  }
+
+  static func singleRgb(_ val: CGFloat) -> UIColor {
+    return self.rgb(val, val, val)
+  }
+
+
+}
