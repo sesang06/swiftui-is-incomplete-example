@@ -8,19 +8,6 @@
 
 import SwiftUI
 
-struct NavigationConfigurator: UIViewControllerRepresentable {
-    var configure: (UINavigationController) -> Void = { _ in }
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-        UIViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
-        }
-    }
-
-}
 
 struct MainRow: View {
   var body: some View {
@@ -58,45 +45,3 @@ struct MainRow: View {
   }
 }
 
-struct MainView: View {
-  var body: some View {
-    NavigationView {
-
-      ZStack {
-        ScrollView {
-
-               MainRow()
-
-               MainRow()
-                 MainRow()
-             }
-
-        NavigationLink(destination: MessageView()) {
-          Image("create_white")
-                     .foregroundColor(Color.white)
-                     .frame(width: 56, height: 56)
-                     .background(Color.style.mainBlue)
-                   .cornerRadius(40)
-                   .shadow(color: Color.black.opacity(0.16), radius: 4, x: 1, y: 3)
-        }
-      }
-
-      .navigationBarTitle("메인 화면", displayMode: .inline)
-
-      .background(NavigationConfigurator { nc in
-
-        nc.navigationBar.barTintColor = UIColor(red: 88.0/255.0, green: 110.0/255.0, blue: 241.0/255.0, alpha: 1)
-        nc.navigationBar.tintColor = UIColor.white
-        nc.navigationBar.titleTextAttributes = [
-               .foregroundColor: UIColor.white]
-      })
-    }
-  }
-}
-
-struct SwiftUIView_Previews: PreviewProvider {
-  static var previews: some View {
-MainView()
-
-  }
-}
