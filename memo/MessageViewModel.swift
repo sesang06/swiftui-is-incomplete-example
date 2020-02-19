@@ -43,14 +43,14 @@ class MessageViewModel: ObservableObject {
     }
 
 
-    NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: .main) { (noti) in
+    NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (noti) in
 
       let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
 
       let height = value.height
 
 
-      self.height = height
+      self.height = 0
 
     }
   }

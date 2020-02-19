@@ -36,10 +36,12 @@ struct MessageView: View {
                 .listRowInsets(EdgeInsets())
             }
           }
+          Spacer(minLength: self.viewModel.height + 12 + 50 + 12)
+            .animation(.spring())
         }
         .edgesIgnoringSafeArea(.bottom)
-//        .offset(y: -self.viewModel.height - 12 - 50 - 12)
-        .animation(.spring())
+//        .padding(.bottom, self.viewModel.height + 12 + 50 + 12)
+//        .animation(.spring())
 
         VStack {
           Spacer()
