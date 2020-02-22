@@ -30,7 +30,7 @@ struct MainView: View {
           MainRow()
         }
 
-        NavigationLink(destination: self.detailView) {
+        NavigationLink(destination: MessageVC()) {
           Image("create_white")
                         .foregroundColor(Color.white)
                         .frame(width: 56, height: 56)

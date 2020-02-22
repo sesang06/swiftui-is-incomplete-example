@@ -51,8 +51,6 @@ extension UIColor {
 
   // MARK: System
 
-//  static let style = Style()
-
 
   static func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat = 255) -> UIColor {
     return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a / 255)
@@ -60,6 +58,24 @@ extension UIColor {
 
   static func singleRgb(_ val: CGFloat) -> UIColor {
     return self.rgb(val, val, val)
+  }
+
+  static let style = Style()
+
+  struct Style {
+
+    var mainBlue: UIColor {
+      return UIColor.rgb(84, 103, 247)
+    }
+
+    var mainBlack: UIColor {
+      return UIColor.singleRgb(64)
+    }
+
+    var detailBlack: UIColor {
+      return UIColor.singleRgb(112)
+    }
+
   }
 
 

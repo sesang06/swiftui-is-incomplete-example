@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,11 +13,17 @@
 		0642448223FA4F3700E68F1B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0642448123FA4F3700E68F1B /* PageViewController.swift */; };
 		0654708423F85CB8001DE205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654708323F85CB8001DE205 /* AppDelegate.swift */; };
 		0654708623F85CB8001DE205 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654708523F85CB8001DE205 /* SceneDelegate.swift */; };
-		0654708B23F85CB8001DE205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0654708923F85CB8001DE205 /* Main.storyboard */; };
 		0654708D23F85CBC001DE205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0654708C23F85CBC001DE205 /* Assets.xcassets */; };
 		0654709023F85CBC001DE205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0654708E23F85CBC001DE205 /* LaunchScreen.storyboard */; };
 		0654709823F85D40001DE205 /* MainRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654709723F85D40001DE205 /* MainRow.swift */; };
 		0654709A23F85F9C001DE205 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654709923F85F9C001DE205 /* Color.swift */; };
+		065DA6EB24013B8200E3D266 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 065DA6EA24013B8200E3D266 /* SnapKit */; };
+		065DA6ED24013D0100E3D266 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065DA6EC24013D0100E3D266 /* MessageCell.swift */; };
+		065DA6EF24013DC800E3D266 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065DA6EE24013DC800E3D266 /* String.swift */; };
+		065DA6F224013EAF00E3D266 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065DA6F124013EAF00E3D266 /* BaseViewController.swift */; };
+		065DA6F424013EFF00E3D266 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065DA6F324013EFF00E3D266 /* BaseCollectionViewCell.swift */; };
+		065DA6F62401589800E3D266 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065DA6F52401589800E3D266 /* MessageViewController.swift */; };
+		065DA6F924015B4C00E3D266 /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 065DA6F824015B4C00E3D266 /* CombineDataSources */; };
 		06FAC65A23FAE65D00D24C30 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65923FAE65D00D24C30 /* NavigationConfigurator.swift */; };
 		06FAC65C23FAE68600D24C30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65B23FAE68600D24C30 /* MainView.swift */; };
 		06FAC65E23FAE7B200D24C30 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65D23FAE7B200D24C30 /* MessageViewModel.swift */; };
@@ -35,12 +41,16 @@
 		0654708023F85CB8001DE205 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654708323F85CB8001DE205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0654708523F85CB8001DE205 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0654708A23F85CB8001DE205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0654708C23F85CBC001DE205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0654708F23F85CBC001DE205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0654709123F85CBC001DE205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0654709723F85D40001DE205 /* MainRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRow.swift; sourceTree = "<group>"; };
 		0654709923F85F9C001DE205 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		065DA6EC24013D0100E3D266 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		065DA6EE24013DC800E3D266 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		065DA6F124013EAF00E3D266 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		065DA6F324013EFF00E3D266 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		065DA6F52401589800E3D266 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		06FAC65923FAE65D00D24C30 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		06FAC65B23FAE68600D24C30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		06FAC65D23FAE7B200D24C30 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
@@ -58,6 +68,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				683971C59520AEB459E74E3B /* Pods_memo.framework in Frameworks */,
+				065DA6EB24013B8200E3D266 /* SnapKit in Frameworks */,
+				065DA6F924015B4C00E3D266 /* CombineDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,18 +105,27 @@
 		0654708223F85CB8001DE205 /* memo */ = {
 			isa = PBXGroup;
 			children = (
+				065DA6F024013E9600E3D266 /* Base */,
 				06FAC66523FAE89100D24C30 /* Utility */,
 				06FAC65623FAE62B00D24C30 /* Detail */,
 				06FAC65523FAE62200D24C30 /* Main */,
 				0626924923F920650044D4DC /* Model */,
 				0654708323F85CB8001DE205 /* AppDelegate.swift */,
 				0654708523F85CB8001DE205 /* SceneDelegate.swift */,
-				0654708923F85CB8001DE205 /* Main.storyboard */,
 				0654708C23F85CBC001DE205 /* Assets.xcassets */,
 				0654708E23F85CBC001DE205 /* LaunchScreen.storyboard */,
 				0654709123F85CBC001DE205 /* Info.plist */,
 			);
 			path = memo;
+			sourceTree = "<group>";
+		};
+		065DA6F024013E9600E3D266 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				065DA6F124013EAF00E3D266 /* BaseViewController.swift */,
+				065DA6F324013EFF00E3D266 /* BaseCollectionViewCell.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		06FAC65523FAE62200D24C30 /* Main */ = {
@@ -135,6 +156,8 @@
 				06FAC65F23FAE7DB00D24C30 /* MessageInputView.swift */,
 				06FAC66123FAE80600D24C30 /* MessageTitleView.swift */,
 				06FAC66323FAE85900D24C30 /* MessageTextView.swift */,
+				065DA6EC24013D0100E3D266 /* MessageCell.swift */,
+				065DA6F52401589800E3D266 /* MessageViewController.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -151,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				0654709923F85F9C001DE205 /* Color.swift */,
+				065DA6EE24013DC800E3D266 /* String.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -189,6 +213,10 @@
 			dependencies = (
 			);
 			name = memo;
+			packageProductDependencies = (
+				065DA6EA24013B8200E3D266 /* SnapKit */,
+				065DA6F824015B4C00E3D266 /* CombineDataSources */,
+			);
 			productName = memo;
 			productReference = 0654708023F85CB8001DE205 /* memo.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +245,10 @@
 				Base,
 			);
 			mainGroup = 0654707723F85CB8001DE205;
+			packageReferences = (
+				065DA6E924013B8200E3D266 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				065DA6F724015B4C00E3D266 /* XCRemoteSwiftPackageReference "CombineDataSources" */,
+			);
 			productRefGroup = 0654708123F85CB8001DE205 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +265,6 @@
 			files = (
 				0654709023F85CBC001DE205 /* LaunchScreen.storyboard in Resources */,
 				0654708D23F85CBC001DE205 /* Assets.xcassets in Resources */,
-				0654708B23F85CB8001DE205 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,12 +307,17 @@
 				06FAC66223FAE80600D24C30 /* MessageTitleView.swift in Sources */,
 				0654708423F85CB8001DE205 /* AppDelegate.swift in Sources */,
 				06FAC65C23FAE68600D24C30 /* MainView.swift in Sources */,
+				065DA6F224013EAF00E3D266 /* BaseViewController.swift in Sources */,
 				06FAC66023FAE7DB00D24C30 /* MessageInputView.swift in Sources */,
 				0654709823F85D40001DE205 /* MainRow.swift in Sources */,
 				0601D30523F96BE4007A4E36 /* Message.swift in Sources */,
+				065DA6F424013EFF00E3D266 /* BaseCollectionViewCell.swift in Sources */,
 				0642448223FA4F3700E68F1B /* PageViewController.swift in Sources */,
+				065DA6ED24013D0100E3D266 /* MessageCell.swift in Sources */,
+				065DA6F62401589800E3D266 /* MessageViewController.swift in Sources */,
 				0654709A23F85F9C001DE205 /* Color.swift in Sources */,
 				06FAC65A23FAE65D00D24C30 /* NavigationConfigurator.swift in Sources */,
+				065DA6EF24013DC800E3D266 /* String.swift in Sources */,
 				0654708623F85CB8001DE205 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,14 +325,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0654708923F85CB8001DE205 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0654708A23F85CB8001DE205 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0654708E23F85CBC001DE205 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -482,6 +510,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		065DA6E924013B8200E3D266 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		065DA6F724015B4C00E3D266 /* XCRemoteSwiftPackageReference "CombineDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		065DA6EA24013B8200E3D266 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 065DA6E924013B8200E3D266 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		065DA6F824015B4C00E3D266 /* CombineDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 065DA6F724015B4C00E3D266 /* XCRemoteSwiftPackageReference "CombineDataSources" */;
+			productName = CombineDataSources;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0654707823F85CB8001DE205 /* Project object */;
 }
