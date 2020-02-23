@@ -7,6 +7,110 @@
 //
 
 import SwiftUI
+import UIKit
+import SnapKit
+import RxSwift
+import RxCocoa
+import RxBiBinding
+
+final class MessageInputUIKitView: BaseView {
+
+
+  let text = BehaviorRelay<String?>(value: "")
+  let sendText = PublishSubject<Void>()
+
+  private let textView: UITextView = {
+    let view = UITextView()
+    view.font = UIFont.systemFont(ofSize: 16)
+    view.textContainer.lineFragmentPadding = 0
+    view.textContainerInset = .zero
+    return view
+  }()
+
+
+  let container: UIStackView = {
+    let stackView = UIStackView()
+    stackView.alignment = .center
+    return stackView
+  }()
+
+  let textContainer: UIView = {
+    let view = UIView()
+    view.layer.cornerRadius = 20
+    view.backgroundColor = UIColor.white
+    view.clipsToBounds = true
+    return view
+  }()
+
+  let textShadowContainer: UIView = {
+    let view = UIView()
+    view.layer.shadowColor = UIColor.black.withAlphaComponent(0.16).cgColor
+    view.layer.shadowRadius = 4
+    view.layer.shadowOffset = CGSize(width: 1, height: 3)
+    return view
+  }()
+
+
+  let sendButton: UIButton = {
+    let button = UIButton()
+    button.setImage(#imageLiteral(resourceName: "create"), for: .normal)
+    button.backgroundColor = UIColor.style.mainBlue
+    button.layer.cornerRadius = 18
+    button.imageView?.contentMode = .scaleAspectFit
+    button.tintColor = UIColor.white
+    return button
+  }()
+
+
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+
+
+    self.addSubview(self.textShadowContainer)
+    self.textShadowContainer.addSubview(self.textContainer)
+    self.textContainer.addSubview(self.container)
+    self.container.addArrangedSubview(self.textView)
+    self.container.addArrangedSubview(self.sendButton)
+
+    (self.textView.rx.text <-> self.text)
+      .disposed(by: self.disposeBag)
+
+    self.sendButton.rx.tap
+      .bind(to: self.sendText)
+      .disposed(by: self.disposeBag)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+
+  override func makeConstraints() {
+    super.makeConstraints()
+    self.textShadowContainer.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+
+    self.textContainer.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+
+    self.container.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+
+
+    self.sendButton.snp.makeConstraints { make in
+      make.size.equalTo(40)
+    }
+    self.textView.snp.makeConstraints { make in
+      make.height.equalTo(40)
+    }
+  }
+
+
+
+}
 
 struct MessageInputView: View {
 

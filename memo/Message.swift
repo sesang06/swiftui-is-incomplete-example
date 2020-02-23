@@ -23,6 +23,11 @@ struct Message: Hashable, Codable, Identifiable {
   }
 }
 
+enum Section: CaseIterable {
+  case main
+  case plain
+}
+
 
 extension Message {
   static func all() -> [Message] {

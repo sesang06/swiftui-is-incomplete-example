@@ -11,6 +11,33 @@
         }
       },
       {
+        "package": "RxBiBinding",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxBiBinding",
+        "state": {
+          "branch": null,
+          "revision": "30dbade1ae70a350d37c8464c77dabecbb855cd6",
+          "version": "0.2.5"
+        }
+      },
+      {
+        "package": "RxKeyboard",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxKeyboard",
+        "state": {
+          "branch": null,
+          "revision": "ed5940a7e29c3a4b4925b2d76260f793d311d58e",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "b3e888b4972d9bc76495dd74d30a8c7fad4b9395",
+          "version": "5.0.1"
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
