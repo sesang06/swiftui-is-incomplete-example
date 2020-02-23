@@ -30,6 +30,8 @@
 		065DA70E2401855A00E3D266 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 065DA70D2401855A00E3D266 /* RxSwift */; };
 		06C0546024026FCA000CFD66 /* RxBiBinding in Frameworks */ = {isa = PBXBuildFile; productRef = 06C0545F24026FCA000CFD66 /* RxBiBinding */; };
 		06C05463240279A1000CFD66 /* MeesageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C05462240279A1000CFD66 /* MeesageViewModel.swift */; };
+		06C0546524028701000CFD66 /* PlainMeesageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C0546424028701000CFD66 /* PlainMeesageViewController.swift */; };
+		06C054672402CA3B000CFD66 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C054662402CA3B000CFD66 /* MainPageViewController.swift */; };
 		06FAC65A23FAE65D00D24C30 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65923FAE65D00D24C30 /* NavigationConfigurator.swift */; };
 		06FAC65C23FAE68600D24C30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65B23FAE68600D24C30 /* MainView.swift */; };
 		06FAC65E23FAE7B200D24C30 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65D23FAE7B200D24C30 /* MessageViewModel.swift */; };
@@ -59,6 +61,8 @@
 		065DA6F52401589800E3D266 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		065DA6FA240175A800E3D266 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		06C05462240279A1000CFD66 /* MeesageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeesageViewModel.swift; sourceTree = "<group>"; };
+		06C0546424028701000CFD66 /* PlainMeesageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainMeesageViewController.swift; sourceTree = "<group>"; };
+		06C054662402CA3B000CFD66 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		06FAC65923FAE65D00D24C30 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		06FAC65B23FAE68600D24C30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		06FAC65D23FAE7B200D24C30 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				06FAC65923FAE65D00D24C30 /* NavigationConfigurator.swift */,
 				06FAC65B23FAE68600D24C30 /* MainView.swift */,
 				0642448123FA4F3700E68F1B /* PageViewController.swift */,
+				06C054662402CA3B000CFD66 /* MainPageViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				0626924623F91C330044D4DC /* MemoDetailView.swift */,
+				06C0546424028701000CFD66 /* PlainMeesageViewController.swift */,
 			);
 			name = Plain;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				0626924723F91C330044D4DC /* MemoDetailView.swift in Sources */,
 				0626924523F903F20044D4DC /* MessageView.swift in Sources */,
 				06FAC66423FAE85900D24C30 /* MessageTextView.swift in Sources */,
+				06C054672402CA3B000CFD66 /* MainPageViewController.swift in Sources */,
 				06FAC66223FAE80600D24C30 /* MessageTitleView.swift in Sources */,
 				0654708423F85CB8001DE205 /* AppDelegate.swift in Sources */,
 				06FAC65C23FAE68600D24C30 /* MainView.swift in Sources */,
@@ -342,6 +349,7 @@
 				0654709823F85D40001DE205 /* MainRow.swift in Sources */,
 				0601D30523F96BE4007A4E36 /* Message.swift in Sources */,
 				065DA6F424013EFF00E3D266 /* BaseCollectionViewCell.swift in Sources */,
+				06C0546524028701000CFD66 /* PlainMeesageViewController.swift in Sources */,
 				0642448223FA4F3700E68F1B /* PageViewController.swift in Sources */,
 				065DA6ED24013D0100E3D266 /* MessageCell.swift in Sources */,
 				065DA6F62401589800E3D266 /* MessageViewController.swift in Sources */,

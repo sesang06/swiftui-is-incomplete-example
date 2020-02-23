@@ -13,35 +13,41 @@ import RxCocoa
 struct MessageVMInput {
   let text: BehaviorRelay<String?>
   let sendText: Observable<Void>
-
   let viewDidLoad: Observable<Void>
+  let mainText: Observable<String>
 }
 
 struct MessageVMOutput {
   let append: Driver<[Message]>
+  let reload: Driver<[Message]>
 }
 
 
 
 final class MessageVM {
-
-
-
-
-
+  
+  
+  
+  
+  
   func transfrom(input: MessageVMInput) -> MessageVMOutput {
-
-
-
+    
+    
+    let reload = input.mainText.map { Message.make(string: $0) }
+      .asDriver(onErrorJustReturn: [])
+    
     let append = input.sendText
       .withLatestFrom(input.text)
       .compactMap { $0 }
-      .map { [Message(text: $0, isMain: false)] }
+      .map { Message.make(string: $0) }
+      .do(onNext: { _ in
+        input.text.accept(nil)
+      })
       .asDriver(onErrorJustReturn: [])
-
-    return MessageVMOutput(append: append)
-
+    
+    return MessageVMOutput(append: append, reload: reload)
+    
   }
-
-
+  
+  
 }

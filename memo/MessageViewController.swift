@@ -16,6 +16,7 @@ import RxCocoa
 import RxKeyboard
 
 
+let singletonMainText = PublishSubject<String>()
 
 
 final class MessageViewController: BaseViewController {
@@ -24,7 +25,10 @@ final class MessageViewController: BaseViewController {
 
 
   private lazy var collectionView: UICollectionView = {
-    let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    let layout = UICollectionViewFlowLayout()
+    layout.minimumInteritemSpacing = 0
+    layout.minimumLineSpacing = 0
+    let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
     cv.register(MessageCell.self, forCellWithReuseIdentifier: "Cell")
     cv.backgroundColor = .white
     cv.delegate = self
@@ -33,7 +37,6 @@ final class MessageViewController: BaseViewController {
 
   let messageInputView = MessageInputUIKitView(frame: .zero)
 
-  let disposeBag = DisposeBag()
 
 
   lazy var dataSource = self.makeDataSource()
@@ -56,8 +59,8 @@ final class MessageViewController: BaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-//    self.view.backgroundColor = UIColor.systemBackground
-    self.view.backgroundColor = .green
+    self.view.backgroundColor =  UIColor.singleRgb(221)
+
     self.view.addSubview(self.collectionView)
     self.view.addSubview(self.messageInputView)
 
@@ -68,28 +71,26 @@ final class MessageViewController: BaseViewController {
 
 
     RxKeyboard.instance.visibleHeight
-        .drive(onNext: { [weak self] keyboardVisibleHeight in
-          guard let `self` = self, self.didMakeConstraints else { return }
-          self.messageInputView.snp.updateConstraints { make in
+      .drive(onNext: { [weak self] keyboardVisibleHeight in
+        guard let `self` = self, self.didMakeConstraints else { return }
+        self.messageInputView.snp.updateConstraints { make in
           make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-keyboardVisibleHeight)
-          }
-          self.view.setNeedsLayout()
-          UIView.animate(withDuration: 0) {
-            self.collectionView.contentInset.bottom = keyboardVisibleHeight + self.messageInputView.frame.height
-            self.collectionView.scrollIndicatorInsets.bottom = self.collectionView.contentInset.bottom
-            self.view.layoutIfNeeded()
-          }
-        })
-        .disposed(by: self.disposeBag)
+        }
+        self.view.setNeedsLayout()
+        UIView.animate(withDuration: 0) {
+          self.view.layoutIfNeeded()
+        }
+      })
+      .disposed(by: self.disposeBag)
 
-      RxKeyboard.instance.willShowVisibleHeight
-        .drive(onNext: { keyboardVisibleHeight in
-          self.collectionView.contentOffset.y += keyboardVisibleHeight
-        })
-        .disposed(by: self.disposeBag)
+    RxKeyboard.instance.willShowVisibleHeight
+      .drive(onNext: { keyboardVisibleHeight in
+        self.collectionView.contentOffset.y += keyboardVisibleHeight
+      })
+      .disposed(by: self.disposeBag)
 
 
-    let input = MessageVMInput(text: self.messageInputView.text, sendText: self.messageInputView.sendText, viewDidLoad: PublishSubject<Void>())
+    let input = MessageVMInput(text: self.messageInputView.text, sendText: self.messageInputView.sendText, viewDidLoad: PublishSubject<Void>(), mainText: singletonMainText)
 
     let output = self.vm.transfrom(input: input)
 
@@ -97,7 +98,7 @@ final class MessageViewController: BaseViewController {
       .drive(onNext: { [weak self] message in
         guard let self = self else { return }
         var snapShot = self.dataSource.snapshot()
-         snapShot.appendItems(message)
+        snapShot.appendItems(message)
 
         let indexPath = IndexPath(item: snapShot.indexOfItem(message.last!)!, section: 0)
         self.dataSource.apply(snapShot, animatingDifferences: true) {
@@ -106,6 +107,16 @@ final class MessageViewController: BaseViewController {
         }
       })
       .disposed(by: self.disposeBag)
+
+    output.reload
+      .drive(onNext: { [weak self] message in
+        guard let self = self else { return }
+        var snapShot = self.dataSource.snapshot()
+        snapShot.reloadItems(message)
+        self.dataSource.apply(snapShot)
+      })
+      .disposed(by: self.disposeBag)
+
   }
 
 
@@ -113,7 +124,8 @@ final class MessageViewController: BaseViewController {
     super.makeConstraints()
 
     self.collectionView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.top.left.right.equalToSuperview()
+      make.bottom.equalTo(self.messageInputView.snp.top)
     }
 
     self.messageInputView.snp.makeConstraints { make in

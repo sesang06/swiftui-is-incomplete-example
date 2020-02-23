@@ -30,6 +30,20 @@ enum Section: CaseIterable {
 
 
 extension Message {
+
+  static func make(string: String) -> [Message] {
+    return string.split(separator: "\n")
+      .map { String($0) }
+      .map { Message(text: $0, isMain: false) }
+  }
+
+  static func transform(messages: [Message]) -> String {
+    let substring = messages.map { $0.text }
+      .map { Substring($0) }
+      .reduce(Substring()) { $0 + "\n" + $1 }
+    return String(substring)
+  }
+
   static func all() -> [Message] {
 
     return [

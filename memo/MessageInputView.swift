@@ -96,7 +96,7 @@ final class MessageInputUIKitView: BaseView {
     }
 
     self.container.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.edges.equalToSuperview().inset(UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 5))
     }
 
 
@@ -104,7 +104,7 @@ final class MessageInputUIKitView: BaseView {
       make.size.equalTo(40)
     }
     self.textView.snp.makeConstraints { make in
-      make.height.equalTo(40)
+      make.height.equalTo(20)
     }
   }
 
