@@ -1,5 +1,5 @@
 //
-//  PlainMeesageViewController.swift
+//  PlainMessageViewController.swift
 //  memo
 //
 //  Created by 조세상 on 2020/02/23.
@@ -10,16 +10,20 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxKeyboard
+import RxBiBinding
+import RxViewController
 
-final class PlainMeesageViewController: BaseViewController {
+final class PlainMessageViewController: BaseViewController {
 
   private let titleTextView: UITextView = {
     let view = UITextView()
-    view.font = UIFont.systemFont(ofSize: 24)
+    view.font = UIFont.systemFont(ofSize: 24, weight: .medium)
     view.textContainer.lineFragmentPadding = 0
     view.textContainerInset = .zero
     view.textColor = UIColor.style.mainBlack
     view.isScrollEnabled = false
+    view.text = "(현재 수정 불가)제목은 제목답게 제목은 제목답게"
+    view.isEditable = false
     return view
   }()
 
@@ -50,6 +54,8 @@ final class PlainMeesageViewController: BaseViewController {
     let view = UIScrollView()
     return view
   }()
+
+  let viewModel = PlainMessageViewModel()
 
 
   override func viewDidLoad() {
@@ -87,7 +93,7 @@ final class PlainMeesageViewController: BaseViewController {
         print(text)
         guard let `self` = self, self.didMakeConstraints else { return }
         let width = self.view.frame.width - 36
-        let height = max(text.height(with: width), 20)
+        let height = max(text.height(with: width), 200)
         self.subTextView.snp.updateConstraints { make in
           make.height.equalTo(height)
         }
@@ -112,8 +118,27 @@ final class PlainMeesageViewController: BaseViewController {
           })
           .disposed(by: self.disposeBag)
 
+
+    (self.titleTextView.rx.text <-> self.viewModel.titleText)
+      .disposed(by: self.disposeBag)
+
+
+    (self.subTextView.rx.text <-> self.viewModel.detailText)
+      .disposed(by: self.disposeBag)
+
+
+    let input = PlainMessageViewModel.Input(
+      viewWillAppear: self.rx.viewWillAppear,
+      viewWillDisappear: self.rx.viewWillDisappear
+    )
+    self.viewModel.transform(input: input)
   }
 
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    print("Pian willD")
+  }
   override func makeConstraints() {
     super.makeConstraints()
 
@@ -121,7 +146,7 @@ final class PlainMeesageViewController: BaseViewController {
       make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
       make.left.right.equalToSuperview()
       make.width.equalToSuperview()
-    make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+      make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
     }
 
     self.titleTextView.snp.makeConstraints { make in
@@ -142,7 +167,7 @@ final class PlainMeesageViewController: BaseViewController {
       make.left.equalToSuperview().offset(18)
       make.right.equalToSuperview().offset(-18)
       make.bottom.equalToSuperview()
-      make.height.equalTo(15)
+      make.height.equalTo(200)
     }
   }
 

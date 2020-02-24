@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "RxExpect",
+        "repositoryURL": "https://github.com/devxoul/RxExpect.git",
+        "state": {
+          "branch": null,
+          "revision": "c3a3bb3d46ee831582c6619ecc48cda1cdbff890",
+          "version": "2.0.0"
+        }
+      },
+      {
         "package": "RxKeyboard",
         "repositoryURL": "https://github.com/RxSwiftCommunity/RxKeyboard",
         "state": {
@@ -35,6 +44,15 @@
           "branch": null,
           "revision": "b3e888b4972d9bc76495dd74d30a8c7fad4b9395",
           "version": "5.0.1"
+        }
+      },
+      {
+        "package": "RxViewController",
+        "repositoryURL": "https://github.com/devxoul/RxViewController",
+        "state": {
+          "branch": null,
+          "revision": "2974fc02742497ee26ba3622ced199818d580444",
+          "version": "1.0.0"
         }
       },
       {

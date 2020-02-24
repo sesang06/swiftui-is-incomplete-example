@@ -10,11 +10,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+
+
 struct MessageVMInput {
   let text: BehaviorRelay<String?>
   let sendText: Observable<Void>
   let viewDidLoad: Observable<Void>
   let mainText: Observable<String>
+
+  let viewWillAppear: ControlEvent<Bool>
+  let viewWillDisappear: ControlEvent<Bool>
 }
 
 struct MessageVMOutput {
@@ -33,8 +38,8 @@ final class MessageVM {
   func transfrom(input: MessageVMInput) -> MessageVMOutput {
     
     
-    let reload = input.mainText.map { Message.make(string: $0) }
-      .asDriver(onErrorJustReturn: [])
+//    let reload = input.mainText.map { Message.make(string: $0) }
+//      .asDriver(onErrorJustReturn: [])
     
     let append = input.sendText
       .withLatestFrom(input.text)
@@ -44,7 +49,16 @@ final class MessageVM {
         input.text.accept(nil)
       })
       .asDriver(onErrorJustReturn: [])
+
+   let reload = input.viewWillAppear
+      .flatMap { _ -> Observable<[Message]> in
+        return Observable.just(MessageData.shared.messages)
+      }
+   .asDriver(onErrorJustReturn: [])
+
     
+
+
     return MessageVMOutput(append: append, reload: reload)
     
   }

@@ -10,6 +10,7 @@
 		0601D30523F96BE4007A4E36 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0601D30423F96BE4007A4E36 /* Message.swift */; };
 		0626924523F903F20044D4DC /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0626924423F903F20044D4DC /* MessageView.swift */; };
 		0626924723F91C330044D4DC /* MemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0626924623F91C330044D4DC /* MemoDetailView.swift */; };
+		0639C7EB24037B96005715AB /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639C7EA24037B96005715AB /* MessageData.swift */; };
 		0642448223FA4F3700E68F1B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0642448123FA4F3700E68F1B /* PageViewController.swift */; };
 		0654708423F85CB8001DE205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654708323F85CB8001DE205 /* AppDelegate.swift */; };
 		0654708623F85CB8001DE205 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654708523F85CB8001DE205 /* SceneDelegate.swift */; };
@@ -30,8 +31,10 @@
 		065DA70E2401855A00E3D266 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 065DA70D2401855A00E3D266 /* RxSwift */; };
 		06C0546024026FCA000CFD66 /* RxBiBinding in Frameworks */ = {isa = PBXBuildFile; productRef = 06C0545F24026FCA000CFD66 /* RxBiBinding */; };
 		06C05463240279A1000CFD66 /* MeesageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C05462240279A1000CFD66 /* MeesageViewModel.swift */; };
-		06C0546524028701000CFD66 /* PlainMeesageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C0546424028701000CFD66 /* PlainMeesageViewController.swift */; };
+		06C0546524028701000CFD66 /* PlainMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C0546424028701000CFD66 /* PlainMessageViewController.swift */; };
 		06C054672402CA3B000CFD66 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C054662402CA3B000CFD66 /* MainPageViewController.swift */; };
+		06C0546A2402D4E9000CFD66 /* RxViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 06C054692402D4E9000CFD66 /* RxViewController */; };
+		06C0546D2402D9F1000CFD66 /* PlainMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C0546C2402D9F1000CFD66 /* PlainMessageViewModel.swift */; };
 		06FAC65A23FAE65D00D24C30 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65923FAE65D00D24C30 /* NavigationConfigurator.swift */; };
 		06FAC65C23FAE68600D24C30 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65B23FAE68600D24C30 /* MainView.swift */; };
 		06FAC65E23FAE7B200D24C30 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FAC65D23FAE7B200D24C30 /* MessageViewModel.swift */; };
@@ -45,6 +48,7 @@
 		0601D30423F96BE4007A4E36 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0626924423F903F20044D4DC /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		0626924623F91C330044D4DC /* MemoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailView.swift; sourceTree = "<group>"; };
+		0639C7EA24037B96005715AB /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		0642448123FA4F3700E68F1B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		0654708023F85CB8001DE205 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0654708323F85CB8001DE205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +65,9 @@
 		065DA6F52401589800E3D266 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		065DA6FA240175A800E3D266 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		06C05462240279A1000CFD66 /* MeesageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeesageViewModel.swift; sourceTree = "<group>"; };
-		06C0546424028701000CFD66 /* PlainMeesageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainMeesageViewController.swift; sourceTree = "<group>"; };
+		06C0546424028701000CFD66 /* PlainMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainMessageViewController.swift; sourceTree = "<group>"; };
 		06C054662402CA3B000CFD66 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		06C0546C2402D9F1000CFD66 /* PlainMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainMessageViewModel.swift; sourceTree = "<group>"; };
 		06FAC65923FAE65D00D24C30 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		06FAC65B23FAE68600D24C30 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		06FAC65D23FAE7B200D24C30 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				065DA70E2401855A00E3D266 /* RxSwift in Frameworks */,
+				06C0546A2402D4E9000CFD66 /* RxViewController in Frameworks */,
 				06C0546024026FCA000CFD66 /* RxBiBinding in Frameworks */,
 				065DA709240183F500E3D266 /* RxKeyboard in Frameworks */,
 				683971C59520AEB459E74E3B /* Pods_memo.framework in Frameworks */,
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0601D30423F96BE4007A4E36 /* Message.swift */,
+				0639C7EA24037B96005715AB /* MessageData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -153,6 +160,14 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		06C0546B2402D9C6000CFD66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				06C0546C2402D9F1000CFD66 /* PlainMessageViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		06FAC65523FAE62200D24C30 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +207,9 @@
 		06FAC65823FAE63E00D24C30 /* Plain */ = {
 			isa = PBXGroup;
 			children = (
+				06C0546B2402D9C6000CFD66 /* ViewModel */,
 				0626924623F91C330044D4DC /* MemoDetailView.swift */,
-				06C0546424028701000CFD66 /* PlainMeesageViewController.swift */,
+				06C0546424028701000CFD66 /* PlainMessageViewController.swift */,
 			);
 			name = Plain;
 			sourceTree = "<group>";
@@ -248,6 +264,7 @@
 				065DA70B2401855A00E3D266 /* RxCocoa */,
 				065DA70D2401855A00E3D266 /* RxSwift */,
 				06C0545F24026FCA000CFD66 /* RxBiBinding */,
+				06C054692402D4E9000CFD66 /* RxViewController */,
 			);
 			productName = memo;
 			productReference = 0654708023F85CB8001DE205 /* memo.app */;
@@ -283,6 +300,7 @@
 				065DA707240183F500E3D266 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
 				065DA70A2401855A00E3D266 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				06C0545E24026FCA000CFD66 /* XCRemoteSwiftPackageReference "RxBiBinding" */,
+				06C054682402D4E9000CFD66 /* XCRemoteSwiftPackageReference "RxViewController" */,
 			);
 			productRefGroup = 0654708123F85CB8001DE205 /* Products */;
 			projectDirPath = "";
@@ -338,6 +356,7 @@
 				06FAC65E23FAE7B200D24C30 /* MessageViewModel.swift in Sources */,
 				0626924723F91C330044D4DC /* MemoDetailView.swift in Sources */,
 				0626924523F903F20044D4DC /* MessageView.swift in Sources */,
+				06C0546D2402D9F1000CFD66 /* PlainMessageViewModel.swift in Sources */,
 				06FAC66423FAE85900D24C30 /* MessageTextView.swift in Sources */,
 				06C054672402CA3B000CFD66 /* MainPageViewController.swift in Sources */,
 				06FAC66223FAE80600D24C30 /* MessageTitleView.swift in Sources */,
@@ -349,11 +368,12 @@
 				0654709823F85D40001DE205 /* MainRow.swift in Sources */,
 				0601D30523F96BE4007A4E36 /* Message.swift in Sources */,
 				065DA6F424013EFF00E3D266 /* BaseCollectionViewCell.swift in Sources */,
-				06C0546524028701000CFD66 /* PlainMeesageViewController.swift in Sources */,
+				06C0546524028701000CFD66 /* PlainMessageViewController.swift in Sources */,
 				0642448223FA4F3700E68F1B /* PageViewController.swift in Sources */,
 				065DA6ED24013D0100E3D266 /* MessageCell.swift in Sources */,
 				065DA6F62401589800E3D266 /* MessageViewController.swift in Sources */,
 				06C05463240279A1000CFD66 /* MeesageViewModel.swift in Sources */,
+				0639C7EB24037B96005715AB /* MessageData.swift in Sources */,
 				0654709A23F85F9C001DE205 /* Color.swift in Sources */,
 				06FAC65A23FAE65D00D24C30 /* NavigationConfigurator.swift in Sources */,
 				065DA6EF24013DC800E3D266 /* String.swift in Sources */,
@@ -591,6 +611,14 @@
 				minimumVersion = 0.2.5;
 			};
 		};
+		06C054682402D4E9000CFD66 /* XCRemoteSwiftPackageReference "RxViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/RxViewController";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -623,6 +651,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 06C0545E24026FCA000CFD66 /* XCRemoteSwiftPackageReference "RxBiBinding" */;
 			productName = RxBiBinding;
+		};
+		06C054692402D4E9000CFD66 /* RxViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06C054682402D4E9000CFD66 /* XCRemoteSwiftPackageReference "RxViewController" */;
+			productName = RxViewController;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

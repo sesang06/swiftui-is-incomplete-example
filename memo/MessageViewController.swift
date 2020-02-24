@@ -14,6 +14,7 @@ import SwiftUI
 import RxSwift
 import RxCocoa
 import RxKeyboard
+import RxViewController
 
 
 let singletonMainText = PublishSubject<String>()
@@ -30,7 +31,7 @@ final class MessageViewController: BaseViewController {
     layout.minimumLineSpacing = 0
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
     cv.register(MessageCell.self, forCellWithReuseIdentifier: "Cell")
-    cv.backgroundColor = .white
+    cv.backgroundColor = UIColor.singleRgb(221)
     cv.delegate = self
     return cv
   }()
@@ -90,7 +91,14 @@ final class MessageViewController: BaseViewController {
       .disposed(by: self.disposeBag)
 
 
-    let input = MessageVMInput(text: self.messageInputView.text, sendText: self.messageInputView.sendText, viewDidLoad: PublishSubject<Void>(), mainText: singletonMainText)
+    let input = MessageVMInput(
+      text: self.messageInputView.text,
+      sendText: self.messageInputView.sendText,
+      viewDidLoad: PublishSubject<Void>(),
+      mainText: singletonMainText,
+      viewWillAppear: self.rx.viewWillAppear,
+      viewWillDisappear: self.rx.viewWillDisappear
+    )
 
     let output = self.vm.transfrom(input: input)
 
@@ -101,6 +109,7 @@ final class MessageViewController: BaseViewController {
         snapShot.appendItems(message)
 
         let indexPath = IndexPath(item: snapShot.indexOfItem(message.last!)!, section: 0)
+         MessageData.shared.messages = snapShot.itemIdentifiers
         self.dataSource.apply(snapShot, animatingDifferences: true) {
           self.collectionView.scrollToItem(at:
             indexPath, at: .bottom, animated: true)
@@ -112,12 +121,27 @@ final class MessageViewController: BaseViewController {
       .drive(onNext: { [weak self] message in
         guard let self = self else { return }
         var snapShot = self.dataSource.snapshot()
-        snapShot.reloadItems(message)
+        snapShot.deleteAllItems()
+          snapShot.appendSections([Section.plain])
+        snapShot.appendItems(message)
+           MessageData.shared.messages = snapShot.itemIdentifiers
         self.dataSource.apply(snapShot)
+
       })
       .disposed(by: self.disposeBag)
 
+    
   }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    print("Message veiwwillA")
+  }
+
+//  override func viewWillDisappear(_ animated: Bool) {
+//    super.viewWillDisappear(animated)
+//    MessageData.shared.messages = self.dataSource.snapshot().itemIdentifiers
+//  }
 
 
   override func makeConstraints() {
@@ -152,13 +176,13 @@ extension MessageViewController: UICollectionViewDelegateFlowLayout, UICollectio
 
 struct MessageVC: UIViewControllerRepresentable {
 
-  typealias UIViewControllerType = MessageViewController
+  typealias UIViewControllerType = MainPageViewController
 
-  func makeUIViewController(context: UIViewControllerRepresentableContext<MessageVC>) -> MessageViewController {
-    return MessageViewController()
+  func makeUIViewController(context: UIViewControllerRepresentableContext<MessageVC>) -> MainPageViewController {
+    return MainPageViewController()
   }
 
-  func updateUIViewController(_ uiViewController: MessageViewController, context: UIViewControllerRepresentableContext<MessageVC>) {
+  func updateUIViewController(_ uiViewController: MainPageViewController, context: UIViewControllerRepresentableContext<MessageVC>) {
 
   }
 }

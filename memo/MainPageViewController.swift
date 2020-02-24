@@ -16,6 +16,7 @@ class MainPageViewController: BaseViewController, UIPageViewControllerDataSource
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = .white
 
     pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     pageController.dataSource = self
@@ -28,8 +29,9 @@ class MainPageViewController: BaseViewController, UIPageViewControllerDataSource
     view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[pageController]|", options: [], metrics: nil, views: views))
     view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[pageController]|", options: [], metrics: nil, views: views))
 
-    controllers.append(PlainMeesageViewController())
     controllers.append(MessageViewController())
+
+    controllers.append(PlainMessageViewController())
 
     pageController.setViewControllers([controllers[0]], direction: .forward, animated: false)
   }
